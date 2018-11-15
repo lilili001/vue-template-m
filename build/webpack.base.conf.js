@@ -27,6 +27,8 @@ module.exports = {
         alias: {
             'vue$': 'vue/dist/vue.js',
             '@': resolve('src'),
+            'm-pack':'../../m-pack'
+
         }
     },
     module: {

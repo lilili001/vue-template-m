@@ -1,21 +1,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './com';
 
-//import Mint from "miya-mint";
-
-import { Tabbar, TabItem } from 'miya-mint';
-
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabItem.name, TabItem);
-
-import { Button } from 'miya-mint';
-
-Vue.component(Button.name, Button);
-
-//Vue.use(Mint);
-import 'miya-mint/lib/style.css'
-import '../../iview/scss/_common.scss';
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css';
+Vue.use(MintUI);
+import './assets/scss/_common.scss';
 
 import store from './store';
 import qs from 'qs';

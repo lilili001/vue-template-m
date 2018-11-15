@@ -9,11 +9,11 @@ Vue.use(Router);
 
 export default new Router({
     routes: [
-        {
+       /* {
             path: '/',
             name: 'HelloWorld',
             component: HelloWorld
-        },
+        },*/
         {
             path: '/counter',
             name: 'counter',
@@ -47,6 +47,20 @@ export default new Router({
             name: 'datatranser',
             component: function (resolve) {
                 require(['../components/dataTrans/datatransfer'], resolve);
+            }
+        },
+        {
+            path: '/start-entry',
+            name: 'start-entry',
+            component: function (resolve) {
+                require(['../views/tibao/start-entry'], resolve);
+            }
+        },
+        {
+            path: '/',
+            name: 'start-page',
+            component: function (resolve) {
+                require(['../views/tibao/pages/start-page'], resolve);
             }
         }
     ]
