@@ -59,6 +59,35 @@
             optclick(item) {
                 console.log(item)
             }
+        },
+        mounted(){
+            /*this.$vux.toast.show({
+                text: 'Hello World',
+                onShow () {
+                    console.log('Plugin: I\'m showing')
+                },
+                onHide () {
+                    console.log('Plugin: I\'m hiding')
+                }
+            })*/
+
+            this.$vux.confirm.show({
+                title: 'Title',
+                content: 'Content',
+                onShow () {
+                    console.log('plugin show')
+                },
+                onHide () {
+                    console.log('plugin hide')
+                },
+                onCancel () {
+                    console.log('plugin cancel')
+                },
+                onConfirm () {
+                    console.log('plugin confirm')
+                }
+            })
+
         }
     }
 </script>
