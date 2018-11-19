@@ -1,9 +1,11 @@
-
- body{
+body{
   background: #f7f7f8;
    font-size:14px;
+   margin:0;
+   padding:0
 }
  a{color:#333;font-size:14px; text-decoration: none}
+.font12{font-size:12px;}
 /**********************margins********************************/
 $mapMargins:(0,4,6,8,10,14,15,20,30,140);
 $directions:(t:top,b:bottom,l:left,r:right);
@@ -19,6 +21,7 @@ $directions:(t:top,b:bottom,l:left,r:right);
 }
 
 /**********************paddings********************************/
+.pad0{padding:0!important;}
 .padding030 {
   padding:0 30px;
   background:#fff;
@@ -59,7 +62,7 @@ $mapSizes:(60,90, 97, 100,136,145,150,175,170,200,220,278,300,314,286,288,306,32
 /**********************custom styles********************************/
 .layout-content {
   min-height: 300px;
-  margin: 0 10px;
+  margin: 0;
 }
 .pull-left {
   float:left;
@@ -79,13 +82,22 @@ $mapSizes:(60,90, 97, 100,136,145,150,175,170,200,220,278,300,314,286,288,306,32
 
 li{list-style:none};
  .page-content{
-   padding-top:46px;
+   //padding-top:46px;
  }
 
  /****************mint-ui 样式重写******************************************/
- .mint-cell-wrapper{font-size:14px;
-
- }
+ .mint-cell-wrapper{font-size:14px;}
+ .mint-cell{height:40px;}
  .mint-field .mint-cell-title{
    width:80px;
  }
+ .mint-field{
+   border-bottom:1px solid #ddd;
+ }
+ .weui-tabbar{
+   box-sizing: border-box;
+ }
+ .weui-tabbar__label{
+   margin:0;padding:0
+ }
+.weui-cells{font-size:14px!important;}

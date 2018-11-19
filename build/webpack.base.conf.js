@@ -9,8 +9,7 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 
-
-module.exports = {
+const webpackConfig = {
     context: path.resolve(__dirname, '../'),
     entry: {
         app: './src/main.js'
@@ -22,18 +21,25 @@ module.exports = {
             ? config.build.assetsPublicPath
             : config.dev.assetsPublicPath
     },
+    //externals 可以排除下面的文件打进包内
+    externals: {
+        /*'vue': 'Vue',
+        'vue-router': 'VueRouter',
+        'axios': 'axios',
+        'qs': 'Qs'*/
+    },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.js',
             '@': resolve('src'),
-            'm-pack':'../../m-pack'
-
+            '@mpack':resolve('../m-pack/src'),
+            //'@mpackcom':resolve('../m-pack/src/components/'),
         }
     },
     module: {
         rules: [
-            {test: /iview1.src.*?js$/, loader: 'babel-loader'},
+            {test: /m-pack.src.*?js$/, loader: 'babel-loader'},
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -83,10 +89,15 @@ module.exports = {
         child_process: 'empty'
     },
     plugins: [
+        //自动加载
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
             'window.jQuery': 'jquery'
-        })
+        }),
+
     ]
-}
+};
+
+const vuxLoader = require('vux-loader');
+module.exports = vuxLoader.merge(webpackConfig,{plugins: ['vux-ui']} );

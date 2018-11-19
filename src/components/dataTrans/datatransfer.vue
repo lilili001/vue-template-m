@@ -5,6 +5,8 @@
         <dataTransfer1Child class="mar-t20" :gift="gift" @incre="increase"></dataTransfer1Child>
         <div v-show="num!==0">Number from child one is {{this.num}} </div>
         <div class="clearfix"></div>
+        <hr>
+        下面是第二个孩子
         <dataTransfer1Child2></dataTransfer1Child2>
     </div>
 </template>

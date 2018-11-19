@@ -56,7 +56,7 @@ module.exports = {
         // Paths
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/yx-wk/alix/reports/v2.0/vue-template/dist/',
+        assetsPublicPath: '/',
 
         /**
          * Source Maps

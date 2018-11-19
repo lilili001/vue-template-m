@@ -1,13 +1,13 @@
 <template>
     <div> I am child one,I have a gift from parent ,it's a <b>[{{gift}}]</b> <br>
        <div class="mar-t20 w360 mar-b20">
-           <Input   v-model="num" class="w200"></Input>
-           <Button type="primary" @click="fnSelect"> 选个数字给你的parent </Button>
+           <input   v-model="num" class="w200"></input>
+           <button type="primary" @click="fnSelect"> 选个数字给你的parent </button>
        </div>
 
         <div class="w350 mar-t20 mar-b20">
-            <Input type="text" v-model="name" class="w200"></Input>
-            <Button type="primary" size="small" @click="fnSetName">给我取个名字</Button>
+            <input type="text" v-model="name" class="w200"></input>
+            <button   size="small" @click="fnSetName">给我取个名字</button>
         </div>
 
         <hr>

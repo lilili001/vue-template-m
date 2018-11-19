@@ -3,15 +3,18 @@ import App from './App'
 import router from './router'
 import './com';
 
-import MintUI from 'mint-ui';
+/*import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
-Vue.use(MintUI);
+Vue.use(MintUI);*/
+
+import '@mpack/styles/index.less';
 import './assets/scss/_common.scss';
 
 import store from './store';
 import qs from 'qs';
 import axios from 'axios';
 Vue.prototype.$http = axios;
+
 
 Vue.config.productionTip = false;
 
@@ -56,7 +59,7 @@ Vue.prototype.$http.interceptors.response.use(
         return Promise.reject(error)
 });
 
-window._ = require('underscore');
+//window._ = require('underscore');
 
 /* eslint-disable no-new */
 const zero = new Vue({

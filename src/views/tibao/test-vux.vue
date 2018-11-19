@@ -2,7 +2,7 @@
     <div>
         <x-header
                 :left-options="{backText: ''}"
-                @on-click-more="showMenus = true"
+                  @on-click-more="showMenus = true"
                 :right-options="{showMore: true}"
         >客户信息</x-header>
 
@@ -55,7 +55,7 @@
             </step>
 
             <group>
-                <cell title="客户信息" link="/customer"  value="已完善" ></cell>
+                <cell title="客户信息"  value="已完善" ></cell>
                 <cell title="贷款信息" @click.native="onClick"  value="未完善"></cell>
                 <cell title="附件信息" value="未完善" ></cell>
             </group>
@@ -72,23 +72,23 @@
         </tabbar>
 
         <!--检查准入结果-->
-        <!--<result-check></result-check>-->
+        <result-check></result-check>
 
     </div>
 </template>
 <script>
 
-    import XHeader from '@mpack/components/x-header/index.vue'
-    import Actionsheet from '@mpack/components/actionsheet/index.vue'
-    import TransferDom from '@mpack/directives/transfer-dom/index.js'
-    import Card from '@mpack/components/card/index.vue'
-    import Flexbox from '@mpack/components/flexbox/flexbox.vue'
-    import FlexboxItem from '@mpack/components/flexbox/flexbox-item.vue'
-    import Cell from '@mpack/components/cell/index.vue'
-    import CellFormPreview from '@mpack/components/cell-form-preview/index.vue'
-    import Group from '@mpack/components/group/index.vue'
-    import {Step,StepItem} from '@mpack/components/step'
-    import {Tabbar,TabbarItem} from '@mpack/components/tabbar'
+    import XHeader from '../../../../m-pack/src/components/x-header/index.vue'
+    import Actionsheet from '../../../../m-pack/src/components/actionsheet/index.vue'
+    import TransferDom from '../../../../m-pack/src/directives/transfer-dom/index.js'
+    import Card from '../../../../m-pack/src/components/card/index.vue'
+    import Flexbox from '../../../../m-pack/src/components/flexbox/flexbox.vue'
+    import FlexboxItem from '../../../../m-pack/src/components/flexbox/flexbox-item.vue'
+    import Cell from '../../../../m-pack/src/components/cell/index.vue'
+    import CellFormPreview from '../../../../m-pack/src/components/cell-form-preview/index.vue'
+    import Group from '../../../../m-pack/src/components/group/index.vue'
+    import {Step,StepItem} from '../../../../m-pack/src/components/step'
+    import {Tabbar,TabbarItem} from '../../../../m-pack/src/components/tabbar'
     import resultCheck from '@/views/tibao/partials/result-check.vue'
 
     export default{

@@ -9,26 +9,6 @@
           <li><router-link :to="{ name: 'fangkuan'}">放款</router-link></li>
           <li><router-link :to="{ name: 'datatranser'}">dataTransfer</router-link></li>
       </ul>
-
-      <mt-tabbar v-model="selected">
-          <mt-tab-item id="tab1">
-              tab1
-          </mt-tab-item>
-          <mt-tab-item id="tab2">
-              tab2
-          </mt-tab-item>
-          <mt-tab-item id="tab3">
-              tab3
-          </mt-tab-item>
-          <mt-tab-item id="tab4">
-              tab4
-          </mt-tab-item>
-      </mt-tabbar>
-
-      <mt-button type="default">default</mt-button>
-      <mt-button type="primary">primary</mt-button>
-      <mt-button type="danger">danger</mt-button>
-
   </div>
 </template>
 

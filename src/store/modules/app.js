@@ -1,7 +1,6 @@
 const app = {
     state: {
         username:"",
-
     },
     mutations: {
         setName (state, name) {
@@ -10,7 +9,6 @@ const app = {
     },
     getters : {
         username: state => state.username,
-
     }
 };
 
