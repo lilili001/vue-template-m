@@ -5,9 +5,23 @@ import counter from '@/components/counter'
 
 const Home = {template: '<div>home page</div>'};
 
+const User = {
+    template: `
+    <div class="user">
+      <h2>User {{ $route.params.id }}</h2>
+      <router-view></router-view>
+    </div>
+  `
+};
+
+const UserHome = { template: '<div>Home</div>' };
+const UserProfile = { template: '<div>Profile</div>' };
+const UserPosts = { template: '<div>Posts</div>' };
+
 Vue.use(Router);
 
 export default new Router({
+    mode:"history",
     routes: [
        /* {
             path: '/',
@@ -54,50 +68,63 @@ export default new Router({
         //客户信息
         {
             path: '/customer',
-            name: 'customer',
             component: function (resolve) {
-                require(['../views/tibao/pages/customer/customer-page'], resolve);
+                require(['../views/tibao/pages/customer/customer'], resolve);
             },
+            redirect:{name:'applier'},
             children:[
                 {
+                    name:"applier",
+                    path: 'applier',
+                    component: function (resolve) {
+                        require(['../views/tibao/pages/customer/customer-page'], resolve);
+                    }
+                },
+                {
+                    name:"contacts",
                     path: 'contacts',
                     component: function (resolve) {
                         require(['../views/tibao/pages/customer/contacts-page'], resolve);
-                    },
-                    name: 'contacts'
+                    }
                 },
                 {
                     path: 'garantees',
                     component: function (resolve) {
                         require(['../views/tibao/pages/customer/garantees-page'], resolve);
                     },
-                    name: 'garantees'
                 },
             ]
         },
         //贷款信息
         {
-            path: '/loan-car',
-            name: 'loan-car-page',
+            path: '/loan',
             component: function (resolve) {
-                require(['../views/tibao/pages/loan/loan-car'], resolve);
+                require(['../views/tibao/pages/loan/loan'], resolve);
             },
+            redirect:{name:'loan-car'},
             children:[
                 {
-                    path: 'loan-pdc',
+                    path: 'car',
+                    component: function (resolve) {
+                        require(['../views/tibao/pages/loan/loan-car'], resolve);
+                    },
+                    name: 'loan-car'
+                },
+                {
+                    path: 'pdc',
                     component: function (resolve) {
                         require(['../views/tibao/pages/loan/loan-product'], resolve);
                     },
                     name: 'loan-pdc'
                 },
                 {
-                    path: 'loan-shisuan',
+                    path: 'count',
                     component: function (resolve) {
-                        require(['../views/tibao/pages/loan/loan'], resolve);
+                        require(['../views/tibao/pages/loan/loan-count'], resolve);
                     },
                     name: 'loan-shisuan'
                 }
             ]
-        }
+        },
     ]
 })

@@ -15,7 +15,6 @@ import qs from 'qs';
 import axios from 'axios';
 Vue.prototype.$http = axios;
 
-
 Vue.config.productionTip = false;
 
 var isFormData = function (obj) {

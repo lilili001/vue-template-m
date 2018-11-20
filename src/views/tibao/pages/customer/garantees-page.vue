@@ -1,75 +1,11 @@
 <template>
+    <!--**************************担保人页面*************************************-->
     <div>
-        <XHeader
-                :left-options="{backText: ''}"
-                @on-click-more="showMenus = true"
-                :right-options="{showMore: true}"
-        >客户信息
-        </XHeader>
-        <div v-transfer-dom>
-            <actionsheet :menus="menus" v-model="showMenus" show-cancel></actionsheet>
-        </div>
+
         <div class="page-content">
-            <tab v-model="index">
-                <tab-item @on-item-click="onItemClick">申请人</tab-item>
-                <tab-item @on-item-click="onItemClick">联系人</tab-item>
-                <tab-item @on-item-click="onItemClick">担保人</tab-item>
-            </tab>
+
             <div class="t-c">
-                <!--******************************* 1.0 申请人信息********************************************-->
-                <div  v-if="index==0">
-                    <x-input title="申请人姓名" name="username" placeholder="" v-model="username"  ></x-input>
-                    <x-input title="身份证" name="username" placeholder="" is-type="china-name"></x-input>
-                    <x-input title="手机号" name="username" placeholder="" is-type="china-name"></x-input>
-                    <cell title="婚姻状态" v-model="marriage" is-link></cell>
-                    <cell title="性别"   is-link></cell>
-                    <cell title="申请人学历"   is-link></cell>
-                    <cell title="申请人学位"   is-link></cell>
-                    <cell title="有无房产"   is-link></cell>
-                    <cell title="居住状况"   is-link></cell>
-                    <cell title="所属行业"   is-link></cell>
-                    <cell title="单位名称"   is-link></cell>
-                    <cell title="申请人职业"   is-link></cell>
-                    <x-input title="税后年薪" name="username"><span slot="right">万元</span></x-input>
-                    <x-input title="单位名称" name="username"></x-input>
-                    <cell title="单位省市县"   is-link></cell>
-                    <x-textarea title="单位详细地址"   ></x-textarea>
-                    <cell title="住址省市县"   is-link></cell>
-                    <x-textarea title="住址详细地址"   ></x-textarea>
-                </div>
-                <!--******************************* 2.0 联系人信息********************************************-->
-                <div v-if="index==1">
-                    <group title="配偶或直系亲属信息">
-                        <flexbox>
-                            <flexbox-item :span="3">
-                                <i class="iconfont icon-xiangji"></i>
-                                <div class="font12">扫描亲属证件</div>
-                            </flexbox-item>
-                            <flexbox-item>
-                                <x-input title="亲属姓名" name="username"></x-input>
-                                <x-input title="身份证号" name="username"></x-input>
-                            </flexbox-item>
-                        </flexbox>
-                        <cell title="与申请人关系" is-link></cell>
-                        <x-input title="手机号" name="username"></x-input>
-                        <x-input title="税后年薪" name="username"><span slot="right">万元</span></x-input>
-                        <x-input title="单位名称" name="username"></x-input>
-                        <cell title="单位省市县"   is-link></cell>
-                        <x-textarea title="单位详细地址"   ></x-textarea>
-                    </group>
-                    <group title="紧急联系人信息">
-                            <cell title="与申请人关系" is-link></cell>
-                            <x-input title="电话" name="username"></x-input>
-                            <x-input title="姓名" name="username"></x-input>
-                    </group>
-                    <group>
-                        <cell title="与申请人关系" is-link></cell>
-                        <x-input title="电话" name="username"></x-input>
-                        <x-input title="姓名" name="username"></x-input>
-                    </group>
-                </div>
                 <!--******************************* 3.0 担保人信息********************************************-->
-                <div v-if="index==2">
                     <div class="garantee-box">
                         <div class="garantee-create-box" v-show="show_garantee_selector">
                             <div @click="selectGarantee(0)">个人担保人</div>
@@ -175,7 +111,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
         <!--检查准入结果-->

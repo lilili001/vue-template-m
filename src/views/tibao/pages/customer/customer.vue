@@ -1,32 +1,23 @@
 <template>
-    <!--*******************************客户信息页面*****************************************-->
     <div>
+        <XHeader
+                :left-options="{backText: ''}"
+                @on-click-more="showMenus = true"
+                :right-options="{showMore: true}"
+        >客户信息
+        </XHeader>
 
-        <div class="page-content">
-            <div class="t-c">
-                <!--******************************* 1.0 申请人信息********************************************-->
-                    <x-input title="申请人姓名" name="username" placeholder="" v-model="username"  ></x-input>
-                    <x-input title="身份证" name="username" placeholder="" is-type="china-name"></x-input>
-                    <x-input title="手机号" name="username" placeholder="" is-type="china-name"></x-input>
-                    <cell title="婚姻状态" v-model="marriage" is-link></cell>
-                    <cell title="性别"   is-link></cell>
-                    <cell title="申请人学历"   is-link></cell>
-                    <cell title="申请人学位"   is-link></cell>
-                    <cell title="有无房产"   is-link></cell>
-                    <cell title="居住状况"   is-link></cell>
-                    <cell title="所属行业"   is-link></cell>
-                    <cell title="单位名称"   is-link></cell>
-                    <cell title="申请人职业"   is-link></cell>
-                    <x-input title="税后年薪" name="username"><span slot="right">万元</span></x-input>
-                    <x-input title="单位名称" name="username"></x-input>
-                    <cell title="单位省市县"   is-link></cell>
-                    <x-textarea title="单位详细地址"   ></x-textarea>
-                    <cell title="住址省市县"   is-link></cell>
-                    <x-textarea title="住址详细地址" ></x-textarea>
-            </div>
+        <div v-transfer-dom>
+            <actionsheet :menus="menus" v-model="showMenus" show-cancel></actionsheet>
         </div>
-        <!--检查准入结果-->
-        <!--<result-check></result-check>-->
+
+        <div>
+            <router-link to="/customer/applier">申请人</router-link>
+            <router-link to="/customer/contacts">联系人</router-link>
+            <router-link to="/customer/garantees">担保人</router-link>
+        </div>
+
+        <router-view></router-view>
     </div>
 </template>
 <script>
