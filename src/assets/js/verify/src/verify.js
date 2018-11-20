@@ -1,26 +1,6 @@
 /**
  * Created by focus on 2017/4/14.
  */
-
-/*import ConfigPlugin from '@mpack/plugins/config/index.js'
-import DevicePlugin from '@mpack/plugins/device/index.js'
-import AlertPlugin from '@mpack/plugins/alert/index.js'
-import ConfirmPlugin from '@mpack/plugins/confirm/index.js'
-import ToastPlugin from '@mpack/plugins/toast/index.js'
-
-//如果要用vux的插件 下面的可以打开
-// global VUX config
-Vue.use(ConfigPlugin, {$layout: 'VIEW_BOX'}); // global config for VUX, since v2.5.12
-
-// plugins
-Vue.use(DevicePlugin);
-Vue.use(ToastPlugin);
-Vue.use(AlertPlugin);
-Vue.use(ConfirmPlugin);*/
-
-
-
-
 var defaultRules = require("./defaultRules");
 var _ = require('lodash/object');
 var domTools = require("./domTools");

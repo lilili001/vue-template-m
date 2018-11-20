@@ -31,13 +31,6 @@ export default new Router({
             }
         },
         {
-            path: '/todolist',
-            name: 'todolist',
-            component: function (resolve) {
-                require(['../components/todolist'], resolve);
-            }
-        },
-        {
             path: '/datatransfer',
             name: 'datatranser',
             component: function (resolve) {
@@ -54,7 +47,6 @@ export default new Router({
         },
         /**
          * validator 测试
-         * validator: https://github.com/liuyinglong/verify
          */
         {
             path: '/validator',
@@ -63,7 +55,7 @@ export default new Router({
                 require(['../components/validator'], resolve);
             }
         },
-        /***************************start my w************************************************/
+/*****************************************************start my w*******************************************************************************/
         {
             path: '/',
             name: 'start-page',
@@ -132,5 +124,11 @@ export default new Router({
                 }
             ]
         },
+        {
+            path: '/upload',
+            component: function (resolve) {
+                require(['../views/tibao/pages/upload'], resolve);
+            }
+        }
     ]
 })

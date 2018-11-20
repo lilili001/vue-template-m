@@ -27,6 +27,7 @@ const webpackConfig = {
         'vue-router': 'VueRouter',
         'axios': 'axios',
         'qs': 'Qs'*/
+        'jquery':'jQuery'
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],

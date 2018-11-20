@@ -1,5 +1,8 @@
 <template>
     <div class="input-box clearFix">
+
+        <x-input title="username" is-type="email" v-model="username" ></x-input>
+        <label class="fl" v-remind="username"></label>
         <div>
             <input v-model="age" v-verify="age" placeholder="age"/>
             <label class="fl" v-remind="age"></label>
@@ -13,13 +16,12 @@
 </template>
 
 <script>
-    import Vue from "vue";
-    //import verify from "vue-verify-plugin";
-
+    import XInput from '@mpack/components/x-input/index.vue'
     export default {
         name: 'app',
         data () {
             return {
+                username:"",
                 age:"",
                 regInfo: {
                     phone: ""
@@ -27,6 +29,7 @@
             }
         },
         verify: {
+            username:"required",
             age:"required",
             regInfo: {
                 phone: ["required","mobile"]
@@ -37,6 +40,9 @@
                 console.log(this.$verify.$errors)
                 console.log(this.$verify.check());
             }
+        },
+        components:{
+            XInput
         }
     }
 </script>
