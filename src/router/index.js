@@ -2,9 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import counter from '@/components/counter'
-
 const Home = {template: '<div>home page</div>'};
-
 const User = {
     template: `
     <div class="user">
@@ -13,21 +11,18 @@ const User = {
     </div>
   `
 };
-
-const UserHome = { template: '<div>Home</div>' };
-const UserProfile = { template: '<div>Profile</div>' };
-const UserPosts = { template: '<div>Posts</div>' };
-
+const UserHome = {template: '<div>Home</div>'};
+const UserProfile = {template: '<div>Profile</div>'};
+const UserPosts = {template: '<div>Posts</div>'};
 Vue.use(Router);
-
 export default new Router({
-    mode:"history",
+    mode: "history",
     routes: [
-       /* {
-            path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
-        },*/
+        /* {
+             path: '/',
+             name: 'HelloWorld',
+             component: HelloWorld
+         },*/
         {
             path: '/counter',
             name: 'counter',
@@ -35,7 +30,6 @@ export default new Router({
                 require(['../components/counter'], resolve);
             }
         },
-
         {
             path: '/todolist',
             name: 'todolist',
@@ -50,11 +44,23 @@ export default new Router({
                 require(['../components/dataTrans/datatransfer'], resolve);
             }
         },
+        /*测试单个组件引入vuex*/
         {
             path: '/vuex',
             name: 'vuex',
             component: function (resolve) {
                 require(['../components/vuex'], resolve);
+            }
+        },
+        /**
+         * validator 测试
+         * validator: https://github.com/liuyinglong/verify
+         */
+        {
+            path: '/validator',
+            name: 'validator',
+            component: function (resolve) {
+                require(['../components/validator'], resolve);
             }
         },
         /***************************start my w************************************************/
@@ -71,17 +77,17 @@ export default new Router({
             component: function (resolve) {
                 require(['../views/tibao/pages/customer/customer'], resolve);
             },
-            redirect:{name:'applier'},
-            children:[
+            redirect: {name: 'applier'},
+            children: [
                 {
-                    name:"applier",
+                    name: "applier",
                     path: 'applier',
                     component: function (resolve) {
                         require(['../views/tibao/pages/customer/customer-page'], resolve);
                     }
                 },
                 {
-                    name:"contacts",
+                    name: "contacts",
                     path: 'contacts',
                     component: function (resolve) {
                         require(['../views/tibao/pages/customer/contacts-page'], resolve);
@@ -101,8 +107,8 @@ export default new Router({
             component: function (resolve) {
                 require(['../views/tibao/pages/loan/loan'], resolve);
             },
-            redirect:{name:'loan-car'},
-            children:[
+            redirect: {name: 'loan-car'},
+            children: [
                 {
                     path: 'car',
                     component: function (resolve) {

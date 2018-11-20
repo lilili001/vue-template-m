@@ -213,6 +213,11 @@ Vue.use(DevicePlugin);
 Vue.use(ToastPlugin);
 Vue.use(AlertPlugin);
 Vue.use(ConfirmPlugin);
+
+Vue.$vux.toast.show({
+    text: 'Loading'
+})
+
 /*Vue.use(LoadingPlugin)
 Vue.use(WechatPlugin)
 Vue.use(AjaxPlugin)
