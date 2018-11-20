@@ -25,7 +25,6 @@
 </template>
 
 <script>
-    import {jquery as $j} from 'jquery';
     import COS from '@/assets/js/lib/cos-js-sdk-v5.js';
     import XHeader from '@mpack/components/x-header/index.vue'
     import Actionsheet from '@mpack/components/actionsheet/index.vue'
