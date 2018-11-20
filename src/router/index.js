@@ -78,6 +78,22 @@ export default new Router({
                         require(['../views/tibao/pages/customer/customer-page'], resolve);
                     }
                 },
+                //企业客户 start
+                {
+                    name: "license",
+                    path: 'license',
+                    component: function (resolve) {
+                        require(['../views/tibao/pages/customer/license-page'], resolve);
+                    }
+                },
+                {
+                    name: "enterprise",
+                    path: 'enterprise',
+                    component: function (resolve) {
+                        require(['../views/tibao/pages/customer/enterprise-page'], resolve);
+                    }
+                },
+                //企业客户 end
                 {
                     name: "contacts",
                     path: 'contacts',
